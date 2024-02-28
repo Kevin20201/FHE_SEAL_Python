@@ -65,7 +65,7 @@ def example_ckks_basics():
     
     
     ### Multiplication
-    encrypted_result = evaluator.multiply_plain(encrypted_result, plain_coeff8)
+    #encrypted_result = evaluator.multiply_plain(encrypted_result, plain_coeff8)
 
     print(sys.getsizeof(encrypted_result))
     vec_result = evaluator.add(vector_encrypted, vector_encrypted)
@@ -87,6 +87,7 @@ def example_ckks_basics():
     
     ### Vector
     print("Vector size: " + str(sys.getsizeof(vec_result)))
+    print("Expected Result: [6.282, 4, 6, 8, 8]\n")
     
     decrypted_result = decryptor.decrypt(vec_result)
     input_result = ckks_encoder.decode(decrypted_result)
